@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palabras y frases perdidas - Deutsch</title>
+    
+    <!-- SEO & Essential Metadata - German -->
+    <title>Palabras y frases perdidas | Sammlung von Spuren und Reflexionen</title>
+    <meta name="description" content="Entdecken Sie die Sammlung von Spuren und literarischen Reflexionen von Palabras y frases perdidas auf Deutsch. Durchstöbern Sie thematische Blöcke in einem einzigartigen Design.">
+    <meta name="keywords" content="verlorene wörter, verlorene sätze, literatur, reflexionen, literarische kartographie, deutsch">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Palabras y frases perdidas | Sammlung von Spuren und Reflexionen">
+    <meta property="og:description" content="Eine Sammlung von literarischen Spuren und Reflexionen, organisiert nach thematischen Blöcken.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://palabrasyfrasesperdidas-dotcom.github.io/palabras-al/">
+    
+    <!-- Hreflang Links for Multilingual SEO -->
+    <link rel="alternate" hreflang="es" href="https://palabrasyfrasesperdidas-dotcom.github.io/palabras-es/">
+    <link rel="alternate" hreflang="en" href="https://palabrasyfrasesperdidas-dotcom.github.io/palabras-en/">
+    <link rel="alternate" hreflang="ja" href="https://palabrasyfrasesperdidas-dotcom.github.io/palabras-jp/">
+    <link rel="alternate" hreflang="fr" href="https://palabrasyfrasesperdidas-dotcom.github.io/palabras-fr/">
+    <link rel="alternate" hreflang="de" href="https://palabrasyfrasesperdidas-dotcom.github.io/palabras-al/">
+    <link rel="alternate" hreflang="x-default" href="https://palabrasyfrasesperdidas-dotcom.github.io/palabrasyfrasesperdidas/">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -184,7 +203,7 @@
             loadingElem.textContent = "Wird geladen...";
         }
         try {
-            const response = await fetch('frases.json?t=' + Date.now());
+            const response = await fetch('frases.json?v=2.1&t=' + Date.now());
             if (!response.ok) throw new Error("HTTP-Fehler " + response.status);
             allFrases = await response.json();
             if (loadingElem) loadingElem.style.display = 'none';
@@ -251,7 +270,6 @@
         if (prevBtn) prevBtn.disabled = currentIndex === 0;
         if (nextBtn) nextBtn.disabled = currentIndex === currentFilteredFrases.length - 1;
 
-        // Se ajusta para usar el sufijo _al correspondiente a los archivos alemanes en el repositorio
         const imgPath = `plantilla${currentBlockNum}_al.png`;
         const videoPath = `plantilla${currentBlockNum}_al_video.mp4`;
 
@@ -265,7 +283,6 @@
         };
 
         bgImg.onerror = () => {
-            // Intento alternativo por si la imagen usa la extensión .jpg en lugar de .png
             const bgImgJpg = new Image();
             bgImgJpg.src = `plantilla${currentBlockNum}_al.jpg`;
             bgImgJpg.onload = () => {
