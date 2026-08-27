@@ -280,7 +280,8 @@
         if (nextBtn) nextBtn.disabled = currentIndex === currentFilteredFrases.length - 1;
 
         const imgPath = `plantilla${currentBlockNum}_al.png`;
-        const videoPath = `plantilla${currentBlockNum}_al_video.mp4`;
+        // CORRECCIÓN APLICADA AQUÍ:
+        const videoPath = `plantilla${currentBlockNum}_video_al.mp4`;
 
         const bgImg = new Image();
         bgImg.src = imgPath;
